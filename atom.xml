@@ -5,9 +5,9 @@
   <subtitle>w.g.d的 small blog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://blog.bjutwgd.club/"/>
   <updated>2018-09-15T07:49:18.723Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://blog.bjutwgd.club/</id>
   
   <author>
     <name>W.g.d.</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://yoursite.com/2018/09/15/hello-world/"/>
-    <id>http://yoursite.com/2018/09/15/hello-world/</id>
+    <link href="http://blog.bjutwgd.club/2018/09/15/hello-world/"/>
+    <id>http://blog.bjutwgd.club/2018/09/15/hello-world/</id>
     <published>2018-09-15T07:49:18.722Z</published>
     <updated>2018-09-15T07:49:18.723Z</updated>
     
