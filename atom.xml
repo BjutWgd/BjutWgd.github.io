@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.bjutwgd.club/"/>
-  <updated>2018-09-15T07:49:18.723Z</updated>
+  <updated>2018-09-17T14:26:07.940Z</updated>
   <id>http://blog.bjutwgd.club/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何用 github+hexo 搭建博客（教程分析）</title>
+    <link href="http://blog.bjutwgd.club/2018/09/17/%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://blog.bjutwgd.club/2018/09/17/第一篇博客/</id>
+    <published>2018-09-17T12:35:28.013Z</published>
+    <updated>2018-09-17T14:26:07.940Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Blog搭建教程"><a href="#Blog搭建教程" class="headerlink" title="Blog搭建教程"></a>Blog搭建教程</h1><h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a><strong>引言</strong></h3><hr><p>  做为伪码农的小菜鸟们，拥有一个人博客是必要的（大神请忽略）。废话不多说，操练起来，下面讲介绍如何给予hexo框架和github搭建自己的个人Blog—&gt;</p><h3 id="本地下载安装"><a href="#本地下载安装" class="headerlink" title="本地下载安装"></a><strong>本地下载安装</strong></h3><hr><h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><ol><li>去<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a>网站下载对应版本的软件。</li><li>安装至电脑即可，右键桌面空白出现 Git Bash Here<br><img src="./images/1.jpg" alt="如图" title="1"><h4 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h4><a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a><br>下载相应版本就OK<h4 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h4>1.在硬盘创建文件夹如Blog(任意)用于存放本地代码，右键Git Bash Here,在弹出界面输入：</li><li><code>$ npm install hexo-cli -g</code></li><li><code>$ hexo init</code><br>hexo框架初始化完成之后 ,输入</li><li><p><code>$ hexo s</code><br>输出结果：<br>  1.<code>INFO  Start processing</code><br>  2.<code>INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</code><br>本地服务默认占用端口4000，可以使用如下代码更改：<br> 1.<code>$ hexo server -p X # X为你想要修改的端口号</code><br>之后便可以在浏览器输入<a href="http://localhost:4000" target="_blank" rel="noopener"> http://localhost:4000</a>，查看框架本身自带Blog效果了.<br>如下图：</p><h3 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a><strong>部署到GitHub</strong></h3><hr><h4 id="创建Repository"><a href="#创建Repository" class="headerlink" title="创建Repository"></a>创建Repository</h4><p>首先登陆 <a href="https://github.com" target="_blank" rel="noopener">github</a>,新建一个Repository，在 Repository name 下填写 yourname.github.io(!!!! yourname一定要和你github账号一样).就像我github账号是Bjutwgd,所以name应该为Bjutwgd.github.io,见下图.<br>   <img src="./images/5_1.png" alt="enter description here"></p><h4 id="hexo-安装git插件"><a href="#hexo-安装git插件" class="headerlink" title="hexo 安装git插件"></a>hexo 安装git插件</h4><p>回到刚才本地博客目录，Git Bash Here,输入以下命令：<br><code>$ npm install hexo-deployer-git --save</code><br>完成后打开根目录下config.yml文件(最好有notepad++),修改最下方Deployment：</p></li><li><p>deploy:</p></li><li>type:  git</li><li>repo:  <a href="http://github.com/Bjutwgd/Bjutwgd.github.io.git" target="_blank" rel="noopener">http://github.com/Bjutwgd/Bjutwgd.github.io.git</a> # 这里只要把Bjutwgd换成你的</li><li><p>branch: master</p><h4 id="完成最终部署"><a href="#完成最终部署" class="headerlink" title="完成最终部署"></a>完成最终部署</h4><p>在根目录Git Bash Here,然后运行:</p></li><li><p>$ hexo clean</p></li><li>$ hexo g</li><li>$ hexo d<br>d过程中会要求输入github账号密码，输入完成即可。其实可以添加本地SSH Key 就不用输入密码，具体这里不做介绍喽。<br>结果最后一行显示如下，则成功部署至github：<br><code>INFO  Deploy done: git</code></li></ol><h3 id="域名绑定"><a href="#域名绑定" class="headerlink" title="域名绑定"></a>域名绑定</h3><hr><h4 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h4><p> 首先在任何可购买域名的地方，买一个例如<a href="https://cloud.tencent.com/" target="_blank" rel="noopener">腾讯云</a>,<br> 然后做相应解析，记录类型填CNAME,其他可参照下图：<br> <img src="./images/4.png" alt="域名解析"><br> 然后到github上做相应修改,打开Repository，点击最右端setting：<br> <img src="./images/6.png" alt="setting"><br> 然后下拉找到github pages 在Custom domain 中填写刚刚解析的域名就ok了<br> <img src="./images/7.png" alt="write here"><br> 然后就可以开心的访问了。</p><h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><p>Hexo的主题很多，自己可以去Themes-Hexo下载自己喜欢的主题到本地博客根目录的 /themes 文件夹，然后修改博客本目录下的站点配置文件_config.yml，如下：</p><h4 id="Plugins-https-hexo-io-plugins"><a href="#Plugins-https-hexo-io-plugins" class="headerlink" title="Plugins: https://hexo.io/plugins/"></a>Plugins: <a href="https://hexo.io/plugins/" target="_blank" rel="noopener">https://hexo.io/plugins/</a></h4><h4 id="Themes-https-hexo-io-themes"><a href="#Themes-https-hexo-io-themes" class="headerlink" title="Themes: https://hexo.io/themes/"></a>Themes: <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></h4><p>theme: maupassant #  这里修改为你要使用的主题名字即可，以后想换别的主题，也只需要下载下来后直接改配置文件就好了</p><p>这里我使用了maupassant，非常简洁,配置什么的大家可以直接看主题的官方文档就好了，下一篇文章我准备写一下关于maupassant主题的一些个性化设置。<br>替换完主题，依然可以在本地先预览一下，然后部署到Github就好了。</p><h3 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h3><hr><p>Small rookie 的第一篇博客完成了，虽然很水，但是会努力。感谢bitch 刘同学<br><a href="blog.rookiehacker.org">刘童鞋</a><br><a href="https://www.haomwei.com/technology/maupassant-hexo.html" target="_blank" rel="noopener">屠城</a><br><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">hexo</a><br><a href="http://www.cnblogs.com/imapla/p/5533000.html" target="_blank" rel="noopener">Hexo 博客部署到 GitHub </a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Blog搭建教程&quot;&gt;&lt;a href=&quot;#Blog搭建教程&quot; class=&quot;headerlink&quot; title=&quot;Blog搭建教程&quot;&gt;&lt;/a&gt;Blog搭建教程&lt;/h1&gt;&lt;h3 id=&quot;引言&quot;&gt;&lt;a href=&quot;#引言&quot; class=&quot;headerlink&quot; titl
+      
+    
+    </summary>
+    
+      <category term="Blog" scheme="http://blog.bjutwgd.club/categories/Blog/"/>
+    
+    
+      <category term="hexo，博客" scheme="http://blog.bjutwgd.club/tags/hexo%EF%BC%8C%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
